@@ -3,7 +3,6 @@ import dbConnect from "../../../lib/mongoose";
 import User from "../../../models/User";
 import crypto from "crypto";
 import axios from "axios";
-// import { sendResetPasswordEmail } from "@/lib/email"; // You'll need to implement this
 
 export async function POST(req: Request) {
   try {
@@ -20,11 +19,6 @@ export async function POST(req: Request) {
     user.resetToken = resetToken;
     user.resetTokenExpiry = resetTokenExpiry;
     await user.save();
-    let serverUrl = `${process.env.API_URL}`;
-    await axios.post(`${serverUrl}/api/send-password-reset-email`, {
-      email,
-      resetToken,
-    });
 
     return NextResponse.json({ message: "Password reset email sent" });
   } catch (error) {
