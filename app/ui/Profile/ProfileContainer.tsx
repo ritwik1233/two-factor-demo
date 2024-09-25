@@ -1,12 +1,6 @@
 "use client";
 import { disable2FA, enable2FA, verify2FA } from "@/app/lib/api";
-import {
-  Box,
-  Button,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Paper, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import Header from "../Header/Header";
@@ -156,8 +150,7 @@ const ProfileContainer = () => {
                 }}
               >
                 <Typography variant="h6">
-                  Scan de qr-code met behulp van de Microsoft
-                  Authenticator-applicatie
+                  Scan the QR code using the Authenticator application
                 </Typography>
                 <Image
                   src={qrcodeImage}
@@ -170,8 +163,8 @@ const ProfileContainer = () => {
             {qrcodeImage?.length > 0 && (
               <>
                 <Typography variant="h6">
-                  Voer hieronder de verificatiecode uit de Microsoft
-                  Authenticator-applicatie in.
+                  Enter the verification code from the Authenticator application
+                  below.
                 </Typography>
                 <TextField
                   label="2FA Code"
